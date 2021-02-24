@@ -89,6 +89,8 @@ function Change_JoyRunPins {
     let j--
   done
   ####---------------------------------------2021.02.24 修改的脚本-------------------------------------------------------
+#  PinEvine="jd_6cd93e613b0e5,被折叠的记忆33,277548856_m,米大眼老鼠"
+#  PinALL="${PinALL}${PinEvine}"
   #perl -i -pe "{s|(let invite_pins = \[\")(.+\"\];?)|\1${PinALL}\2|; s|(let run_pins = \[\")(.+\"\];?)|\1${PinALL}\2|}" ${ScriptsDir}/jd_joy_run.js
   perl -i -pe "{s|(let invite_pins=\[\')(.+\'\];?)|\1${PinALL}\2|;}" ${ScriptsDir}/jd_joy_run.js
 }
