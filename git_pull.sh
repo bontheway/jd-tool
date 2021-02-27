@@ -91,8 +91,10 @@ function Change_JoyRunPins {
   ####---------------------------------------2021.02.24 修改的脚本-------------------------------------------------------
 #  PinEvine="jd_6cd93e613b0e5,被折叠的记忆33"
 #  PinALL="${PinALL}${PinEvine}"
-  #perl -i -pe "{s|(let invite_pins = \[\")(.+\"\];?)|\1${PinALL}\2|; s|(let run_pins = \[\")(.+\"\];?)|\1${PinALL}\2|}" ${ScriptsDir}/jd_joy_run.js
-  perl -i -pe "{s|(let invite_pins=\[\')(.+)(\'\]\;let run_pins)|\1${PinALL}\3|; s|(run_pins=\[)(temp\[\'join\'\]\(\'\,\'\)\];)|\1\'${PinALL}\' \+ \2|}" ${ScriptsDir}/jd_joy_run.js
+  echo -e "手动添加jd_joy 邀请码和助力码。(${PinALL})"
+#  perl -i -pe "{s|(let invite_pins = \[\')(.+\'\];?)|\1${PinALL}\2|; s|(let run_pins = \[\')(.+\'\];?)|\1${PinALL}\2|}" ${ScriptsDir}/jd_joy_run.js
+  perl -i -pe "{s|(let invite_pins = \[\')(.+\'\];?)|\1${PinALL}\2|; s|(run_pins = \[)(temp.join.+\];?)|\1\'${PinALL}\' \+ \2|}" ${ScriptsDir}/jd_joy_run.js
+#  perl -i -pe "{s|(let invite_pins=\[\')(.+)(\'\]\;let run_pins)|\1${PinALL}\3|; s|(run_pins=\[)(temp\[\'join\'\]\(\'\,\'\)\];)|\1\'${PinALL}\' \+ \2|}" ${ScriptsDir}/jd_joy_run.js
 }
 
 ## 修改lxk0301大佬js文件的函数汇总
